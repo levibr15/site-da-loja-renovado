@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão Profissional de Redes Sociais | Aumente Seu Alcance</title>
+    <style>
+        /* Reset e Estilos Globais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', Arial, sans-serif;
+        }
+        
+        body {
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Cores Principais */
+        :root {
+            --primary: #4361EE;
+            --secondary: #3A0CA3;
+            --accent: #F72585;
+            --light: #F8F9FA;
+            --dark: #212529;
+        }
+        
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .hero-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(247, 37, 133, 0.4);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(247, 37, 133, 0.6);
+        }
+        
+        /* Benefícios */
+        .benefits {
+            padding: 80px 20px;
+            background-color: var(--light);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 36px;
+            color: var(--dark);
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .benefit-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .benefit-icon {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .benefit-title {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        /* Como Funciona */
+        .how-it-works {
+            padding: 80px 20px;
+            background-color: white;
+        }
+        
+        .steps-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .step {
+            display: flex;
+            margin-bottom: 40px;
+            align-items: center;
+        }
+        
+        .step-number {
+            background-color: var(--primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 24px;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .step-content h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        /* Depoimentos */
+        .testimonials {
+            padding: 80px 20px;
+            background-color: var(--light);
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .testimonial-text::before {
+            content: '"';
+            font-size: 60px;
+            color: var(--primary);
+            opacity: 0.2;
+            position: absolute;
+            top: -20px;
+            left: -10px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #ddd;
+            margin-right: 15px;
+            overflow: hidden;
+        }
+        
+        .author-info h4 {
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        /* Preços */
+        .pricing {
+            padding: 80px 20px;
+            background-color: white;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .pricing-card {
+            background: white;
+            border-radius: 10px;
+            padding: 40px 30px;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.1);
+            border: 2px solid #eee;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .pricing-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-10px);
+        }
+        
+        .pricing-card.popular {
+            border-color: var(--accent);
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background-color: var(--accent);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 14px;
+        }
+        
+        .pricing-title {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .pricing-price {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .pricing-price span {
+            font-size: 16px;
+            color: #666;
+            font-weight: 400;
+        }
+        
+        .pricing-features {
+            margin-bottom: 30px;
+        }
+        
+        .pricing-features li {
+            list-style: none;
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .pricing-features li::before {
+            content: "?";
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+        }
+        
+        /* FAQ */
+        .faq {
+            padding: 80px 20px;
+            background-color: var(--light);
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+        }
+        
+        .faq-question {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--dark);
+            cursor: pointer;
+        }
+        
+        .faq-answer {
+            color: #666;
+        }
+        
+        /* CTA Final */
+        .final-cta {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-align: center;
+        }
+        
+        .final-cta h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .final-cta p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        
+        .footer-logo {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo span {
+            color: var(--accent);
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+        
+        .copyright {
+            color: #aaa;
+            font-size: 14px;
+        }
+        
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .step {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .step-number {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            
+            .final-cta h2 {
+                font-size: 28px;
+            }
+            
+            .final-cta p {
+                font-size: 18px;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">Social<span>Pro</span></div>
+            <a href="#pricing" class="cta-button">Quero Contratar Agora</a>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <h1>Gestão Profissional de Redes Sociais</h1>
+            <p>Deixe suas redes sociais nas mãos de especialistas e foque no que realmente importa: seu negócio!</p>
+            <a href="#pricing" class="cta-button">Quero Aumentar Minhas Vendas</a>
+        </div>
+    </section>
+    
+    <!-- Benefícios -->
+    <section class="benefits">
+        <h2 class="section-title">O Que Você Vai Ganhar</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3 class="benefit-title">Crescimento Orgânico</h3>
+                <p>Aumente seu alcance e engajamento com estratégias comprovadas que fazem seu perfil crescer naturalmente.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3 class="benefit-title">Comunidade Engajada</h3>
+                <p>Construa uma base de seguidores fiéis que interagem com seu conteúdo e compartilham sua marca.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fas fa-dollar-sign"></i>
+                </div>
+                <h3 class="benefit-title">Mais Vendas e Conversões</h3>
+                <p>Transforme seus seguidores em clientes com estratégias de vendas otimizadas para redes sociais.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <h3 class="benefit-title">Tempo Livre</h3>
+                <p>Não perca mais horas criando posts e respondendo mensagens. Tenha tempo para focar no seu negócio.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h3 class="benefit-title">Conteúdo Estratégico</h3>
+                <p>Conteúdo planejado para posicionar sua marca como autoridade no seu segmento.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <h3 class="benefit-title">Resultados Comprovados</h3>
+                <p>Métricas claras e relatórios mensais para acompanhar o crescimento da sua presença digital.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Como Funciona -->
+    <section class="how-it-works">
+        <h2 class="section-title">Como Funciona</h2>
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Análise Estratégica</h3>
+                    <p>Analisamos seu negócio, público-alvo e concorrentes para criar uma estratégia personalizada.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Criação de Conteúdo</h3>
+                    <p>Produzimos conteúdo relevante e atraente, alinhado com a identidade da sua marca.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Publicação e Otimização</h3>
+                    <p>Publicamos nos melhores horários e otimizamos continuamente para melhor desempenho.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3>Monitoramento e Ajustes</h3>
+                    <p>Acompanhamos os resultados e ajustamos a estratégia para maximizar seu retorno.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Depoimentos -->
+    <section class="testimonials">
+        <h2 class="section-title">O Que Nossos Clientes Dizem</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    <p>Minhas redes sociais deram um salto de qualidade depois que contratei o serviço. Em 3 meses já tinha dobrado meu engajamento e as vendas online aumentaram 40%.</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar"></div>
+                    <div class="author-info">
+                        <h4>Ana Carolina</h4>
+                        <p>Loja de Cosméticos</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    <p>Finalmente encontrei uma equipe que entende do meu negócio e entrega resultados reais. Não preciso mais me preocupar com postagens e tenho muito mais tempo para atender meus clientes.</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar"></div>
+                    <div class="author-info">
+                        <h4>Ricardo Mendes</h4>
+                        <p>Consultor Financeiro</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    <p>Depois de tentar gerenciar sozinha por anos, percebi que precisava de ajuda profissional. Foi o melhor investimento que fiz para o meu negócio este ano!</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar"></div>
+                    <div class="author-info">
+                        <h4>Juliana Santos</h4>
+                        <p>Academia de Dança</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Preços -->
+    <section class="pricing" id="pricing">
+        <h2 class="section-title">Nossos Planos</h2>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3 class="pricing-title">Básico</h3>
+                <div class="pricing-price">R$997<span>/mês</span></div>
+                <ul class="pricing-features">
+                    <li>3 posts por semana</li>
+                    <li>1 rede social</li>
+                    <li>Relatório mensal</li>
+                    <li>Resposta a comentários</li>
+                    <li>Suporte por e-mail</li>
+                </ul>
+                <a href="https://wa.me/5577998102353" class="cta-button" target="_blank">Contratar Plano</a>
+            </div>
+            
+            <div class="pricing-card popular">
+                <div class="popular-badge">MAIS POPULAR</div>
+                <h3 class="pricing-title">Profissional</h3>
+                <div class="pricing-price">R$1.497<span>/mês</span></div>
+                <ul class="pricing-features">
+                    <li>5 posts por semana</li>
+                    <li>2 redes sociais</li>
+                    <li>Relatório quinzenal</li>
+                    <li>Resposta a comentários e DMs</li>
+                    <li>1 campanha/mês</li>
+                    <li>Suporte prioritário</li>
+                </ul>
+                <a href="https://wa.me/5577998102353" class="cta-button" target="_blank">Contratar Plano</a>
+            </div>
+            
+            <div class="pricing-card">
+                <h3 class="pricing-title">Premium</h3>
+                <div class="pricing-price">R$2.497<span>/mês</span></div>
+                <ul class="pricing-features">
+                    <li>Posts diários</li>
+                    <li>3 redes sociais</li>
+                    <li>Relatório semanal</li>
+                    <li>Gestão completa de interações</li>
+                    <li>3 campanhas/mês</li>
+                    <li>Consultoria mensal</li>
+                    <li>Suporte 24/7</li>
+                </ul>
+                <a href="https://wa.me/5577998102353" class="cta-button" target="_blank">Contratar Plano</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ -->
+    <section class="faq">
+        <h2 class="section-title">Perguntas Frequentes</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">Quanto tempo até eu ver resultados?</div>
+                <div class="faq-answer">Normalmente nossos clientes começam a ver melhorias significativas após 2-3 meses, que é o tempo necessário para o algoritmo das redes sociais reconhecer e valorizar sua conta. Porém, algumas melhorias são perceptíveis já nas primeiras semanas.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Preciso fornecer conteúdo ou imagens?</div>
+                <div class="faq-answer">Não é obrigatório. Nossa equipe é especializada em criação de conteúdo completo. Porém, se você quiser fornecer algum material específico, podemos incorporar na estratégia.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Posso cancelar quando quiser?</div>
+                <div class="faq-answer">Sim, nosso contrato é mensal e sem multa por cancelamento. Porém recomendamos um período mínimo de 4 meses para obtenção de resultados consistentes.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Vocês trabalham com qual tipo de negócio?</div>
+                <div class="faq-answer">Atendemos empresas de todos os segmentos, desde pequenos negócios locais até grandes marcas. Nossa equipe é multidisciplinar e adapta a estratégia para cada tipo de negócio.</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Final -->
+    <section class="final-cta">
+        <h2>Pronto para Transformar Suas Redes Sociais?</h2>
+        <p>Não perca mais tempo tentando gerenciar sozinho. Deixe nossos especialistas cuidarem da sua presença digital enquanto você foca no crescimento do seu negócio.</p>
+        <a href="#pricing" class="cta-button">Quero Contratar Agora</a>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">Social<span>Pro</span></div>
+        <div class="footer-links">
+            <a href="#">Termos de Serviço</a>
+            <a href="#">Política de Privacidade</a>
+            <a href="#">Contato</a>
+            <a href="#">Sobre Nós</a>
+        </div>
+        <p class="copyright">© 2023 SocialPro Gestão de Redes Sociais. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
